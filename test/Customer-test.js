@@ -46,10 +46,8 @@ describe("Customer", () => {
   });
   it("should return a decline message if not enough budget", () => {
     customer.bookHouse(expensiveTH);
-    expect(
-      customer
-        .bookHouse(expensiveTH)
-        .to.equal("Sorry, you cannot afford this house.")
+    expect(customer.bookHouse(expensiveTH)).to.equal(
+      "Sorry, you cannot afford this house."
     );
   });
 });

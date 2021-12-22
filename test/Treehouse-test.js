@@ -34,7 +34,8 @@ describe("Treehouse", () => {
   it("should be able to reduce price when a number is passed in", () => {
     expect(treehouse.reducePrice(25)).to.equal(25);
   });
-  //   it("should be able to update pricePoint based off original price", () => {
-  //     expect(treehouse.updatePricePoint(50)).to.equal("$");
-  //   });
+  it("should be able to update pricePoint based off original price", () => {
+    treehouse.updatePricePoint(50);
+    expect(treehouse.pricePoint).to.equal("$");
+  });
 });
