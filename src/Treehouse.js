@@ -8,21 +8,21 @@ class Treehouse {
     this.isBooked = isBooked || false;
   }
 
-  reducePrice(price) {
-    return (this.price -= price);
-  }
-
-  updatePricePoint(price) {
+  reducePrice(percent) {
+    const reduction = (percent / 100) * this.price;
+    this.price -= reduction;
     if (this.price <= 100) {
-      this.pricePoint === "$";
+      this.pricePoint = "$";
     } else if (this.price >= 101 && this.price <= 200) {
-      this.pricePoint === "$$";
-    } else if (this.price <= 201) {
-      this.pricePoint === "$$$";
+      this.pricePoint = "$$";
+    } else if (this.price >= 201) {
+      this.pricePoint = "$$$";
     } else {
       console.log("Please enter a valid price.");
     }
   }
+
+  updatePricePoint(price) {}
 }
 
 module.exports = Treehouse;

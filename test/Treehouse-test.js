@@ -4,8 +4,10 @@ const Treehouse = require("../src/Treehouse");
 
 describe("Treehouse", () => {
   let treehouse;
+  let expensiveTH;
   beforeEach(() => {
     treehouse = new Treehouse(50, "$", 2, 1, "Cleveland", false);
+    expensiveTH = new Treehouse(350, "$$$", 4, 2, "Boulder", false);
   });
   it("should be a function", () => {
     expect(Treehouse).to.be.a("function");
@@ -32,10 +34,11 @@ describe("Treehouse", () => {
     expect(treehouse.isBooked).to.equal(false);
   });
   it("should be able to reduce price when a number is passed in", () => {
-    expect(treehouse.reducePrice(25)).to.equal(25);
+    treehouse.reducePrice(50);
+    expect(treehouse.price).to.equal(25);
   });
   it("should be able to update pricePoint based off original price", () => {
-    treehouse.updatePricePoint(50);
-    expect(treehouse.pricePoint).to.equal("$");
+    expensiveTH.reducePrice(50);
+    expect(expensiveTH.pricePoint).to.equal("$$");
   });
 });
