@@ -13,16 +13,14 @@ class Treehouse {
     this.price -= reduction;
     if (this.price <= 100) {
       this.pricePoint = "$";
-    } else if (this.price >= 101 && this.price <= 200) {
+    } else if (this.price > 100 && this.price <= 200) {
       this.pricePoint = "$$";
-    } else if (this.price >= 201) {
+    } else if (this.price > 200) {
       this.pricePoint = "$$$";
     } else {
       console.log("Please enter a valid price.");
     }
   }
-
-  updatePricePoint(price) {}
 }
 
 module.exports = Treehouse;
